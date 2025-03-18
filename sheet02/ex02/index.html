@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h3> Información personal:</h3>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellido" placeholder="Apellido" required>
+        <input type="date" id="fdn" placeholder="Fecha de nacimiento" required>
+        <select id="genero" required>
+            <option value="" disable selected>Género</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+        <h3>Información de contacto:</h3>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="tel" id="telefono" placeholder="Número de contacto" required>
+        <textarea type="" id="direccion" placeholder="Direccion" required> </textarea>
+        <h3>Información de cuenta:</h3>
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <input type="password" id="contraseña" placeholder="Contraseña" minlength="8" maxlength="20" required pattern="(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z])">
+        <input type="password" id="confirmacion" placeholder="Confirmar contraseña" required>
+        <h3>Preferencias:</h3>
+        <select id="color" required>
+            <option value="" disabled selected>Color favorito</option>
+            <option value="rojo">Rojo</option>
+            <option value="azul">Azul</option>
+            <option value="verde">Verde</option>
+            <option value="amarillo">Amarillo</option>
+        </select>
+        <p>Aceptar términos y condiciones:<input type="checkbox"></p>
+    </form>
+</body>
+</html>
