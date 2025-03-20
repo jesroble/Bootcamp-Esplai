@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Formulario</h1>
+    <form>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <br>
+        <input type="text" id="apellidos" placeholder="Apellidos" required>
+        <br>
+        <input type="email" id="email" placeholder="Correo electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        <br>
+        <input type="password" id="password" placeholder="Contraseña" minlength="8" required>
+        <br><input type="tel" id="telefono" placeholder="Número de teléfono" pattern="\d{10}">
+        <br>
+        <input type="date" id="fdn" placeholder="Fecha de nacimiento" required>
+        <br>
+        <select id="genero" required>
+            <option value="" disabled selected>Género</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="otro">Otro</option>
+        </select>
+        <br>
+        <p>Aceptar términos y condiciones:<input type="checkbox" required></p>
+        <br>
+        <button type="submit">Enviar</button>
+        <br>
+    </form>
+</body>
+</html>
