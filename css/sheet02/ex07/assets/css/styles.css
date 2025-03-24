@@ -1,0 +1,12 @@
+.animate-box 
+{
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    transition: transform 0.3 ease;
+}
+
+.animate-box:hover
+{
+    transform: scale(1.5);
+}

@@ -1,0 +1,19 @@
+.grid-container
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item.large
+{
+    grid-column: span 2;
+}
+
+.grid-item
+{
+    padding: 1px;
+    background-color: red;
+    border: 1px solid black;
+}

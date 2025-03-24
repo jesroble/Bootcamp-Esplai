@@ -1,0 +1,21 @@
+.flex-container
+{
+    display: flex;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.flex-container > :first-child
+{
+    width: auto;
+    height: auto;
+}
+.flex-container > :nth-child(2)
+{
+    flex-grow: 1;
+}
+.flex-container > :last-child
+{
+    width: auto;
+    height: auto;
+}
