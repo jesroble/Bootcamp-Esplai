@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, init
+ial-scale=1.0">
+<title>Ejercicio 8</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+
+    body {
+        display: flex;
+        height: 100vh;
+    }
+
+    .bounce-box {
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+    0% {
+        transform: translate(0, 0); /* Posición inicial en la esquina superior izquierda */
+    }
+    20% {
+        transform: translate(50px, 0); /* Mover ligeramente a la derecha */
+    }
+    40% {
+        transform: translate(50px, 150px); /* Caer hacia abajo */
+    }
+    60% {
+        transform: translate(50px, 75px); /* Rebote hacia arriba */
+    }
+    80% {
+        transform: translate(50px, 125px); /* Rebote hacia abajo */
+    }
+    100% {
+        transform: translate(50px, 100px); /* Posición final */
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <div class="bounce-box">Estoy rebotando</div>
+</body>
+</html>
