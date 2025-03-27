@@ -1,0 +1,86 @@
+body
+{
+    margin: 12%;
+}
+
+.table1
+{
+    width: 100%;
+}
+
+.signup-button
+{
+    background-color: white;
+    padding: 5px;
+}
+
+.link
+{
+    padding: 5px;
+}
+
+.block
+{
+    background-color: gainsboro; padding: 50px; text-align: center;
+}
+
+.startfree
+{
+    background-color: black; color: gray;
+}
+
+.proposition
+{
+    text-align: center;
+    padding: 50px;
+}
+
+.photos
+{
+    margin-bottom: 40px;
+}
+
+.photos img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.footer
+{
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.copyright
+{
+    flex: 3;
+}
+
+.copyright th
+{
+    padding: 5px;
+}
+
+.copyright td
+{
+    padding: 5px;
+}
+
+.info
+{
+    text-align: right;
+}
+
+.info th
+{
+    padding: 10px;
+}
+
+.info td
+{
+    padding: 10px;
+}
