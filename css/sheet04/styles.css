@@ -47,7 +47,10 @@ input
     padding: 0;
     height: 200px;
     width: 150px;
-    overflow: hidden;   
+    overflow: hidden;
+    
+   /*  animation: appear 0.8s ease-in-out;
+    animation-timeline: scroll-animation; */
 }
 
 .pokemon
@@ -196,3 +199,37 @@ input
 .circle-right {
     right: -30px;
 }
+
+
+/* animations */
+
+.card:hover
+{
+    animation: upnear 0.5s ease-in-out forwards;
+}
+
+@keyframes upnear
+{
+    from{
+        transform: translateY(0px) scale(1);
+    }
+    to{
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* @keyframes appear 
+{
+    from{
+        background-color: rgb(32, 7, 7); 
+    }
+    to{
+    }
+}
+
+@scroll-timeline scroll-animation
+{
+    source: auto;
+    orientation: block;
+    scroll-offsets: 10% 30%
+} */
