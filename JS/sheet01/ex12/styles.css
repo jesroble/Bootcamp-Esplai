@@ -1,0 +1,26 @@
+body
+{
+    display: grid;
+    width: 100vh;
+    justify-content: center;
+}
+
+.numeros
+{
+    padding: 10px;
+}
+
+.calculos
+{
+    padding: 10px;
+}
+
+.operador
+{
+    margin-right: 10px;
+}
+
+p
+{
+margin-left: 20%;
+}
