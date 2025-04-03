@@ -5,17 +5,21 @@ function Randomizer(num1, num2) {
 let n = document.getElementById("usern");
 let button = document.getElementById("button");
 let text = document.getElementById("text");
-let machinen = Randomizer(1, 100);
+let machinen = Randomizer(1, 3);
 
 button.addEventListener("click", () => {
     let usern = parseFloat(n.value);
 
-    if (isNaN(usern) || usern < 1 || usern > 100) {
+    if (isNaN(usern) || usern < 1 || usern > 100) 
+    {
         text.textContent = "Introduce un número válido";
         text.style.color = "orange";
         return;
     }
-
+    if (usern == machinen){
+        text.textContent = "¡Acertaste el número!: " + machinen
+    }
+    text.textContent = `El número es ${usern < machinen ? "mayor" : "menor"}`
     if (usern < machinen) 
     {
         text.textContent = "El número es mayor";
@@ -28,7 +32,7 @@ button.addEventListener("click", () => {
     {
         text.textContent = "¡Acertaste el número!: " + machinen;
         text.style.color = "green";
-        machinen = Randomizer(1, 100);
+        machinen = Randomizer(1, 3);
     }
 
     n.value = "";
