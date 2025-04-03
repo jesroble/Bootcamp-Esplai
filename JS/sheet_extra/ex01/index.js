@@ -6,5 +6,5 @@ console.log(cuadrados + "\n");
 let pares = numeros.filter(num => num % 2 === 0);
 console.log(pares + "\n");
 
-let suma = numeros.reduce((sum, num) => sum + num, 0);
-console.log(suma + "\n");
+let sumar = numeros.reduce((sum, num) => sum + num, 0);
+console.log(sumar + "\n");
