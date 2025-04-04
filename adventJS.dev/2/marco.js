@@ -16,7 +16,7 @@ function createFrame(names)
     }
 
     marco += "*".repeat(width + 2) + "\n";
-    console.log(marco);
+    return (marco);
 }
 
 createFrame(['midu', 'madeval', 'educalvolpz'])
