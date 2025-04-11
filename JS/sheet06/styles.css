@@ -1,3 +1,4 @@
+
 body {
     position: relative;
     width: 100%;
@@ -6,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 0;
+    z-index: 0; /* Asegura que los círculos queden detrás de todo */
 }
 
 input 
@@ -47,23 +48,9 @@ input
     height: 200px;
     width: 150px;
     overflow: hidden;
-
-    background-color: black;
-    color: transparent;
-    transition: color 0.5s ease, background-color 0.5s ease;
-    opacity: 0;
-}
-
-.card.discovered
-{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0;
-    height: 200px;
-    width: 150px;
-    overflow: hidden;
+    
+   /*  animation: appear 0.8s ease-in-out;
+    animation-timeline: scroll-animation; */
 }
 
 .pokemon
@@ -230,3 +217,19 @@ input
         transform: translateY(-20px) scale(1.1);
     }
 }
+
+/* @keyframes appear 
+{
+    from{
+        background-color: rgb(32, 7, 7); 
+    }
+    to{
+    }
+}
+
+@scroll-timeline scroll-animation
+{
+    source: auto;
+    orientation: block;
+    scroll-offsets: 10% 30%
+} */
