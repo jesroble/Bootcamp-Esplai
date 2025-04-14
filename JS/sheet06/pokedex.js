@@ -79,20 +79,27 @@ async function find_evo(name) {
     }
 }
 
+async function fetch_all(letters) 
+{
+    let poke_list_url = await fetch("https://pokeapi.co/api/v2/pokemon/");
+    let poke_list = await poke_list_url.json();
+        
+    const coincidences = poke_list.results.filter(pokemon => pokemon.name.includes(letters));
+
+    if (coincidences.length == 0) 
+    {
+        pokedex.innerHTML = "<p>No results founded</p>";
+        load_more.style.display = "none";
+    }
+    else
+        return coincidences;
+}
+
 async function generate_pokedex(letters)
 {
     try
     {
-        let poke_list_url = await fetch("https://pokeapi.co/api/v2/pokemon/");
-        let poke_list = await poke_list_url.json();
-        
-        let coincidences = poke_list.results.filter(pokemon => pokemon.name.includes(letters));
-
-        if (coincidences.length == 0) {
-            pokedex.innerHTML = "<p>No results founded</p>";
-            load_more.style.display = "none";
-            return;
-        }
+        const coincidences = await fetch_all(letters);
 
         let start = loaded - 9;
         let end = loaded;
