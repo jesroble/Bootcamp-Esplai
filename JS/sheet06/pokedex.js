@@ -86,7 +86,7 @@ async function generate_pokedex(letters)
         let poke_list_url = await fetch("https://pokeapi.co/api/v2/pokemon/");
         let poke_list = await poke_list_url.json();
         
-        let coincidences = poke_list.results.filter(pokemon => pokemon.name.startsWith(letters));
+        let coincidences = poke_list.results.filter(pokemon => pokemon.name.includes(letters));
 
         if (coincidences.length == 0) {
             pokedex.innerHTML = "<p>No results founded</p>";
@@ -94,7 +94,7 @@ async function generate_pokedex(letters)
             return;
         }
 
-        let start = loaded - 6;
+        let start = loaded - 9;
         let end = loaded;
 
         for (let i = start; i < end && i < coincidences.length; i++) {
