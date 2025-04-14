@@ -1,5 +1,7 @@
-const pokedex = document.getElementById("pokedex");
-const search = document.getElementById("search");
+const   pokedex = document.getElementById("pokedex");
+const   search = document.getElementById("search");
+const   load_more = document.getElementById("load-more");
+let     loaded = 9;
 
 function capitalize(str) 
 {
@@ -77,37 +79,33 @@ async function find_evo(name) {
     }
 }
 
-async function generate_pokedex()
-{
-    let poke_list_url = await fetch("https://pokeapi.co/api/v2/pokemon/");
-    let poke_list = await poke_list_url.json();
-
-    for (let i = 0; i < 20; i++)
-        await load_pokemon(poke_list.results[i].name);
-}
-
-async function search_coincidences(letters) 
+async function generate_pokedex(letters)
 {
     try
     {
         let poke_list_url = await fetch("https://pokeapi.co/api/v2/pokemon/");
         let poke_list = await poke_list_url.json();
         
-        let coincidences = [];
+        let coincidences = poke_list.results.filter(pokemon => pokemon.name.startsWith(letters));
 
-        for (let i = 0; i < 20; i++)
-        {
-            if (poke_list.results[i].name.startsWith(letters))
-                coincidences.push(poke_list.results[i].name);
-        }
-
-        if (coincidences.length === 0) {
+        if (coincidences.length == 0) {
             pokedex.innerHTML = "<p>No results founded</p>";
+            load_more.style.display = "none";
             return;
         }
 
-        for (const name of coincidences)
-            await load_pokemon(name);
+        let start = loaded - 6;
+        let end = loaded;
+
+        for (let i = start; i < end && i < coincidences.length; i++) {
+            await load_pokemon(coincidences[i].name);
+        }
+
+        if (loaded >= coincidences.length) {
+            load_more.style.display = "none";
+        } else {
+            load_more.style.display = "block";
+        }
     }
     catch (error)
     {
@@ -116,13 +114,18 @@ async function search_coincidences(letters)
     }
 }
 
-search.addEventListener("keypress", function (e) 
-{
-    if (e.key == "Enter")
-    {
-        pokedex.innerHTML = "";
-        search_coincidences(search.value.toLowerCase().trim());
-    }     
+load_more.addEventListener("click", () => {
+    loaded += 6;
+    const query = search.value.toLocaleLowerCase().trim();
+    generate_pokedex(query);
 });
 
-generate_pokedex();
+search.addEventListener("input", function (e) 
+{
+    const query = search.value.toLocaleLowerCase().trim();
+    pokedex.innerHTML = "";
+    loaded = 9;
+    generate_pokedex(query);
+});
+
+generate_pokedex("");
