@@ -1,0 +1,235 @@
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFCC00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Asegura que los círculos queden detrás de todo */
+}
+
+input 
+{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black; 
+    border-radius: 5px; 
+}
+
+.container
+{
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.pokedex
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 15px;
+}
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0;
+    height: 200px;
+    width: 150px;
+    overflow: hidden;
+    
+   /*  animation: appear 0.8s ease-in-out;
+    animation-timeline: scroll-animation; */
+}
+
+.pokemon
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    background-color: rgb(226, 219, 219);
+}
+
+.pokemon img
+{
+    width: 80%;
+    height: auto;
+}
+
+.pokemon .id
+{
+    position: absolute;
+    background-color: rgb(186, 191, 186);
+    bottom: 1px;
+    left: 1px;
+    padding: auto;
+    font-size: small;
+}
+
+.info
+{
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    text-align: center;
+}
+
+.info2
+{
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    text-align: center;
+}
+
+.name
+{
+    position: absolute;
+    left: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.type 
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-left: 6px;
+    font-size: small;
+    align-items: center;
+}
+
+.type p 
+{
+    display: inline-block;
+    text-align: center;
+    padding: 1px 8px;
+    border: solid black;
+    border-radius: 5px;
+    background-color: rgb(238, 242, 244);
+    margin-right: 3px;
+    margin-bottom: 0;
+    font-size: smaller;
+}
+
+.evolution
+{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    height: 70%;
+    width: 80%;
+    border-left: 3px solid rgb(118, 39, 39);
+    border-radius: 5p;
+    padding: 5px;
+    margin-left: 5px;
+    color: rgb(118, 39, 39);
+}
+
+.info2 .main-text
+{
+    font-size: large;
+}
+
+.main-text
+{
+    font-size: smaller;
+}
+
+.sub-text
+{
+    font-size: medium;
+}
+
+.square 
+{
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    position: fixed;
+    top: -40px;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+.square-left 
+{
+    left: -40px;
+}
+
+.square-right 
+{
+    right: -40px;
+}
+
+
+.circle 
+{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50%;
+    position: fixed;
+    bottom: -30px;
+    z-index: -1;
+}
+
+.circle-left {
+    left: -30px;
+}
+
+.circle-right {
+    right: -30px;
+}
+
+
+/* animations */
+
+.card:hover
+{
+    animation: upnear 0.5s ease-in-out forwards;
+}
+
+@keyframes upnear
+{
+    from{
+        transform: translateY(0px) scale(1);
+    }
+    to{
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* @keyframes appear 
+{
+    from{
+        background-color: rgb(32, 7, 7); 
+    }
+    to{
+    }
+}
+
+@scroll-timeline scroll-animation
+{
+    source: auto;
+    orientation: block;
+    scroll-offsets: 10% 30%
+} */
