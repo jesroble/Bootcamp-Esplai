@@ -1,0 +1,196 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #FFCC00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+input {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #fff8dc;
+    color: black;
+}
+
+.container {
+    width: 60%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.pokedex {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 150px;
+    height: 200px;
+    background-color: #f4f4f4;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    animation: upnear 0.4s ease-out forwards;
+}
+
+@keyframes upnear {
+    from {
+        transform: translateY(0px) scale(1);
+    }
+    to {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.pokemon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    background-color: #e2dbdb;
+}
+
+.pokemon img {
+    width: 80%;
+    height: auto;
+}
+
+.pokemon .id {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: #c5c5c5;
+    padding: 2px 5px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+}
+
+.info2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+    background-color: white;
+    padding: 5px;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 2px;
+}
+
+.type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    font-size: 0.50rem;
+    margin-bottom: 2px;
+}
+
+.type span {
+    color: rgb(189, 133, 133);
+    background-color: rgb(248, 244, 244);
+    padding: 2px 6px;
+    border: 1px solid rgb(189, 133, 133);
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.evolution {
+    margin-top: 2px;
+    border-left: 3px solid #762727;
+    padding-left: 6px;
+    color: #762727;
+    font-size: 0.75rem;
+    max-height: 2.5rem;
+}
+
+.main-text {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* DECORATION: SQUARES AND CIRCLES */
+.square {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    position: fixed;
+    top: -40px;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+.square-left {
+    left: -40px;
+}
+
+.square-right {
+    right: -40px;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50%;
+    position: fixed;
+    bottom: -30px;
+    z-index: -1;
+}
+
+.circle-left {
+    left: -30px;
+}
+
+.circle-right {
+    right: -30px;
+}
+
+/* Load more button */
+.load-more {
+    padding: 10px 20px;
+    background-color: #ff414d;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.load-more:hover {
+    background-color: #cc353f;
+}
