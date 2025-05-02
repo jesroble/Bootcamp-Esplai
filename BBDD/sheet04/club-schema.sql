@@ -1,3 +1,16 @@
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS participacion_evento;
+DROP TABLE IF EXISTS entrenador_disciplina;
+DROP TABLE IF EXISTS socio_disciplina;
+DROP TABLE IF EXISTS cuota;
+DROP TABLE IF EXISTS evento;
+DROP TABLE IF EXISTS disciplina;
+DROP TABLE IF EXISTS entrenador;
+DROP TABLE IF EXISTS socio;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
 CREATE TABLE socio(
     nro_membresia INT PRIMARY KEY,
     nombre VARCHAR(100),
@@ -10,18 +23,17 @@ CREATE TABLE socio(
 CREATE TABLE entrenador(
     id INT PRIMARY KEY,
     nombre VARCHAR(100),
-    especialidad VARCHAR(100),
     años_exp INT,
     horario VARCHAR(50)
 );
 
 CREATE TABLE disciplina (
-    id_disciplina INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     nombre VARCHAR(50),
     descripcion VARCHAR(200)
 );
 
-CREATE TABLE eventos(
+CREATE TABLE evento(
     id INT PRIMARY KEY,
     nombre VARCHAR(100),
     descripcion VARCHAR(200),
@@ -47,15 +59,24 @@ CREATE TABLE socio_disciplina(
     nro_membresia INT,
     id_disciplina INT,
     PRIMARY KEY (nro_membresia, id_disciplina),
-    FOREIGN KEY nro_membresia REFERENCES socio(nro_membresia),
-    FOREIGN KEY id_disciplina REFERENCES disciplina(id)
+    FOREIGN KEY (nro_membresia) REFERENCES socio (nro_membresia),
+    FOREIGN KEY (id_disciplina) REFERENCES disciplina (id)
 );
 
 CREATE TABLE entrenador_disciplina(
-    id_disciplina INT,
     id_entrenador INT,
-    PRIMARY KEY (id_disciplina, id_entrenador),
-    FOREIGN KEY (id_disciplina) REFERENCES disciplina(id),
-    FOREIGN KEY (id_entrenador) REFERENCES entrenador(id)
+    id_disciplina INT,
+    PRIMARY KEY (id_entrenador, id_disciplina),
+    FOREIGN KEY (id_entrenador) REFERENCES entrenador(id),
+    FOREIGN KEY (id_disciplina) REFERENCES disciplina(id)
+);
+
+CREATE TABLE participacion_evento(
+    nro_membresia INT,
+    id_evento INT,
+    ganador BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY (nro_membresia, id_evento),
+    FOREIGN KEY (nro_membresia) REFERENCES socio (nro_membresia),
+    FOREIGN KEY (id_evento) REFERENCES evento (id)
 );
 
